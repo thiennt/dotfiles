@@ -46,3 +46,33 @@ _load_settings "$HOME/.zsh/configs"
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
+
+plugins=(git rails vi-mode zsh-autosuggestions web-search)
+
+ZSH_THEME="robbyrussell"
+alias cl=clear
+alias v=vim
+alias vi=vim
+alias mux=tmuxinator
+
+export EDITOR='vim'
+export PATH="$PATH:/usr/local/Cellar/qt55/5.5.1/bin"
+export LDFLAGS="-L/usr/local/Cellar/qt55/5.5.1/lib"
+export CPPFLAGS="-I/usr/local/Cellar/qt5/5.5.1/include"
+
+export PATH="$HOME/.bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+
+MYSQL=/usr/local/mysql/bin
+export PATH=$PATH:$MYSQL
+export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
+
+SUBL=/Applications/Sublime\ Text.app/Contents/SharedSupport/bin
+export PATH=$PATH:$SUBL
+
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+export PATH="/usr/local/opt/elasticsearch@2.4/bin:$PATH"
