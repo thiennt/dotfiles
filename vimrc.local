@@ -29,10 +29,11 @@ colorscheme gruvbox
 
 set mouse=a
 
-set relativenumber
+" set relativenumber
 
 au FocusLost * :wa
 
+nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <leader>w <C-w>v<C-w>l
 
 set autoindent

@@ -55,6 +55,7 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'morhetz/gruvbox'
 Plug 'wincent/command-t'
 Plug 'dhruvasagar/vim-zoom'
+Plug 'google/vim-searchindex'
 
 if g:has_async
   Plug 'w0rp/ale'
