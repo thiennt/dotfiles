@@ -7,7 +7,7 @@ set autoread
 set clipboard=unnamed
 
 set noshowmode
-
+set scrolloff=5
 
 " Fast saving
 nmap <leader>w :w!<cr>
