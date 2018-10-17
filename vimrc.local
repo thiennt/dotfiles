@@ -28,7 +28,8 @@ set background=dark
 colorscheme gruvbox
 
 set mouse=a
-
+set laststatus=2
+set statusline+=%F
 " set relativenumber
 
 au FocusLost * :wa

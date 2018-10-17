@@ -46,16 +46,12 @@ Plug 'vim-scripts/mru.vim'
 Plug 'amix/open_file_under_cursor.vim'
 Plug 'garbas/vim-snipmate'
 Plug 'w0rp/ale'
-Plug 'tpope/vim-commentary'
-Plug 'terryma/vim-expand-region'
-Plug 'michaeljsmith/vim-indent-object'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'morhetz/gruvbox'
 Plug 'wincent/command-t'
-Plug 'dhruvasagar/vim-zoom'
 Plug 'google/vim-searchindex'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 if g:has_async
   Plug 'w0rp/ale'
