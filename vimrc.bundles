@@ -35,7 +35,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/tComment'
-Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'vim-scripts/bufexplorer.zip'
 Plug 'junegunn/goyo.vim'
@@ -44,14 +44,14 @@ Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-scripts/mru.vim'
 Plug 'amix/open_file_under_cursor.vim'
-Plug 'garbas/vim-snipmate'
-Plug 'w0rp/ale'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
 Plug 'morhetz/gruvbox'
 Plug 'wincent/command-t'
 Plug 'google/vim-searchindex'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'airblade/vim-gitgutter'
 
 if g:has_async
   Plug 'w0rp/ale'
@@ -105,4 +105,9 @@ map <leader>nn :NERDTreeToggle<cr>
 map <leader>nb :NERDTreeFromBookmark<Space>
 map <leader>nf :NERDTreeFind<cr>
 
-
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => snipmate
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:snipMate = get(g:, 'snipMate', {}) " Allow for vimrc re-sourcing
+let g:snipMate.scope_aliases = {}
+let g:snipMate.scope_aliases['ruby'] = 'ruby,rails'

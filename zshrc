@@ -62,7 +62,8 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rails vi-mode zsh-autosuggestions web-search)
+plugins=(git rails vi-mode zsh-completions zsh-autosuggestions web-search)
+autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
 
@@ -109,6 +110,7 @@ export CPPFLAGS="-I/usr/local/Cellar/qt5/5.5.1/include"
 export PATH="$HOME/.bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
+export PATH=/usr/local/bin:$PATH
 
 MYSQL=/usr/local/mysql/bin
 export PATH=$PATH:$MYSQL
@@ -122,3 +124,5 @@ export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 export PATH="/usr/local/opt/elasticsearch@2.4/bin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
