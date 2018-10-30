@@ -108,13 +108,16 @@ export LDFLAGS="-L/usr/local/Cellar/qt55/5.5.1/lib"
 export CPPFLAGS="-I/usr/local/Cellar/qt5/5.5.1/include"
 
 export PATH="$HOME/.bin:$PATH"
-eval "$(rbenv init -)"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH=/usr/local/bin:$PATH
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
 MYSQL=/usr/local/mysql/bin
 export PATH=$PATH:$MYSQL
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
+
+alias rp='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start &'
 
 SUBL=/Applications/Sublime\ Text.app/Contents/SharedSupport/bin
 export PATH=$PATH:$SUBL
