@@ -52,6 +52,8 @@ Plug 'morhetz/gruvbox'
 Plug 'wincent/command-t'
 Plug 'google/vim-searchindex'
 Plug 'airblade/vim-gitgutter'
+Plug 'vim-scripts/dbext.vim'
+Plug 'Chiel92/vim-autoformat'
 
 if g:has_async
   Plug 'w0rp/ale'
@@ -111,3 +113,39 @@ map <leader>nf :NERDTreeFind<cr>
 let g:snipMate = get(g:, 'snipMate', {}) " Allow for vimrc re-sourcing
 let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['ruby'] = 'ruby,rails'
+
+
+ let g:dbext_default_profile_myDB='type=pgsql:host=localhost:user=thiennt:dsnname=logivan_api_development:dbname=logivan_api_development:passwd=1qazxsw2'
+ let g:dbext_default_profile='myDB'
+
+autocmd VimEnter * DBCompleteTables
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => ALE
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ALE linting events
+augroup ale
+  autocmd!
+
+  if g:has_async
+    set updatetime=1000
+    let g:ale_lint_on_text_changed = 0
+    " let g:ale_lint_on_enter = 0
+    " let g:ale_set_loclist = 0
+    " let g:ale_set_quickfix = 1
+    " autocmd CursorHold * call ale#Lint()
+    " autocmd CursorHoldI * call ale#Lint()
+    " autocmd InsertEnter * call ale#Lint()
+    " autocmd InsertLeave * call ale#Lint()
+    " autocmd VimEnter,FilterWritePre * if &diff | ALEDisable | endif
+  else
+    echoerr "The thoughtbot dotfiles require NeoVim or Vim 8"
+  endif
+augroup END
+
+" augroup vimrc
+"   autocmd!
+"   au BufNewFile,BufRead *.d.ts ALEDisableBuffer
+" augroup END
+

@@ -129,3 +129,12 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 export PATH="/usr/local/opt/elasticsearch@2.4/bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export GOPATH=$HOME/Code/go
+
+export FIRESTORE_PROJECT="logivan-driver-development"
+export FIRESTORE_CREDENTIALS="$(< /Users/thiennt/Documents/Logivan/logivan-driver-development-firebase-adminsdk-xsl47-906ac60a99.json)"
+export VISION_CREDENTIALS_JSON="$(< /Users/thiennt/Documents/Logivan/logivan-prod-vision.json)"
+
+export AWS_ACCESS_KEY_ID="AKIAWWIM5BDASKL3JH57"
+export AWS_SECRET_ACCESS_KEY="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"

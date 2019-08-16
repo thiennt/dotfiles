@@ -39,6 +39,7 @@ nnoremap <leader>w <C-w>v<C-w>l
 
 set autoindent
 set smartindent
+set linebreak
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Fast editing and reloading of vimrc configs
@@ -52,7 +53,7 @@ autocmd! bufwritepost ~/.dotfiles/vimrc source ~/.dotfiles/vimrc
 "    means that you can undo even when you close a buffer/VIM
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 try
-    set undodir=~/.vim_runtime/temp_dirs/undodir
+    set undodir=~/.vim/undodir
     set undofile
 catch
 endtry
@@ -112,7 +113,34 @@ function! LoadSession()
     echo "No session loaded."
   endif
 endfunction
-if(argc() == 0)
-  au VimEnter * nested :call LoadSession()
-endif
-au VimLeave * :call MakeSession()
+" if(argc() == 0)
+"   au VimEnter * nested :call LoadSession()
+" endif
+" au VimLeave * :call MakeSession()
+"
+nnoremap <F2> :call MakeSession()<CR>
+nnoremap <F3> :call LoadSession()<CR>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => maximize
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <C-W>O :call MaximizeToggle()<CR>
+nnoremap <C-W>o :call MaximizeToggle()<CR>
+nnoremap <C-W><C-O> :call MaximizeToggle()<CR>
+
+function! MaximizeToggle()
+  if exists("s:maximize_session")
+    exec "source " . s:maximize_session
+    call delete(s:maximize_session)
+    unlet s:maximize_session
+    let &hidden=s:maximize_hidden_save
+    unlet s:maximize_hidden_save
+  else
+    let s:maximize_hidden_save = &hidden
+    let s:maximize_session = tempname()
+    set hidden
+    exec "mksession! " . s:maximize_session
+    only
+  endif
+endfunction
